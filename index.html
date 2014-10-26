@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Monty's goat</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/montyjs.js"></script>
+    <style></style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Monty's goat</h1>
+            <p>...is behind one of these squares. Can you guess where?</p>
+        </div>
+        <div id="monty">
+            <div id="notification"></div>
+        </div>
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+            <div id="progress-zero-point"></div>
+        </div>
+        <div id="score"></div>
+        <div id="howtoplay">
+            <h3>How to play</h3>
+            <p>Picking a square opens random one without the goat. Then you can change your choice if you like. Last pick reveals if you got it right. 
+            </p><p>Hint: Rock means that the goat is <u>not</u> in the siding squares. 
+            </p><p>You get points based on how many times you picked right and only if the last one is correct.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

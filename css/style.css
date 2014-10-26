@@ -1,0 +1,179 @@
+﻿body {
+    font-family: arial;
+    color: #6B7370;
+}
+
+div {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box; 
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.col-5 {
+    width: 20%;
+    float: left;
+}
+
+#monty {
+    position: relative;
+}
+
+#monty:after,
+.header:after {
+    content: '';
+    display: block;
+    clear: both;            
+}
+
+.header h1 {
+    margin-bottom:0;
+    margin-top: 35px;
+}
+
+.header p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Game area */
+
+.door {
+    height: 0px;
+    padding: 9.6% 0;
+    background-color: #89B2A2;
+    border: 2px solid #fff;
+    -webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    -o-transition: background 0.2s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.door:after {
+    color: #fff;
+    display: block;
+    padding: 4px;
+    float: right;
+}
+
+.goat {
+    background: url('../img/goat.png') no-repeat center center #B0D1B2;
+    background-color: #B0D1B2 !important;
+}
+
+.goat-happy {
+    background: url('../img/goat-happy.gif') no-repeat center center #B0D1B2;
+    background-color: #B0D1B2 !important;
+}
+
+.goat-sad {
+    background: url('../img/goat-sad.gif') no-repeat center center #B0D1B2;
+    background-color: #B0D1B2 !important;
+}
+
+.rock {
+    background: url('../img/rock.png') no-repeat center center #5C6361;
+}
+
+.goat, .goat-happy, .goat-sad, .rock {
+    -o-background-size: 100% auto, auto;
+    -moz-background-size: 100% auto, auto;
+    -webkit-background-size: 100% auto, auto;
+    background-size: 100% auto, auto;
+}
+
+.selected {
+    background-color: #FAFAD4;
+}
+
+.opened {
+    background-color: #5C6361;
+    cursor: default;
+}
+
+/* Counters and progress */
+
+#progress-bar-container {
+    height: 8px;
+    width: 100%;
+    position: relative;
+    margin-top: 25px;
+    background-color: #f2f2f2;
+}
+
+#progress-bar {
+    height: 8px;
+    background-color: gray;
+    width: 0%;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    position: absolute;
+    right:50%;
+}
+       
+#progress-zero-point {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    background-color: #f2f2f2;
+    border-radius: 100%;
+    color: #fff;
+    border: 1px solid #fff;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 50px;
+    margin-top: -6px;
+}
+
+#score {
+    text-align: center;
+    margin-top: 25px;
+    color: #BFC7C4;
+}
+
+/* Game end */
+
+#notification {
+    background-color: rgba(255,255,255,0.8);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 70px;
+    font-size: 18px;
+}
+
+#notification h2 {
+    font-size: 60px;
+    color: #B0D1B2;
+    margin: 0;
+}
+
+#notification h2.awww {
+    color: #FB7968;
+}
+
+#notification .goat-end {
+    margin-top:-10px;
+    width: 250px;
+}
+
+
+#howtoplay {
+    margin: 75px 0;
+}
+
+
