@@ -1,4 +1,6 @@
 ﻿body {
+    padding: 0;
+    margin: 0;
     font-family: arial;
     color: #6B7370;
 }
@@ -9,9 +11,19 @@ div {
     box-sizing: border-box; 
 }
 
+button, input {
+  margin: 0;
+  padding: 10px 20px;
+  border: none;
+  font: inherit;
+  line-height: 20px;
+  background-color: #F9C593;
+  color: #fff;
+}
+
 .container {
     width: 90%;
-    max-width: 500px;
+    max-width: 450px;
     margin: 0 auto;
 }
 
@@ -20,7 +32,7 @@ div {
     float: left;
 }
 
-#monty {
+#area {
     position: relative;
 }
 
@@ -31,14 +43,15 @@ div {
     clear: both;            
 }
 
-.header h1 {
-    margin-bottom:0;
-    margin-top: 35px;
+.header {
+    margin: 15px 0;
 }
 
-.header p {
+.header h1 {
+    float: left;
+    margin: 0;
     margin-top: 10px;
-    margin-bottom: 20px;
+    font-size: 30px;
 }
 
 /* Game area */
@@ -60,6 +73,8 @@ div {
     display: block;
     padding: 4px;
     float: right;
+    margin-top: -50%;
+    font-weight: bold;
 }
 
 .goat {
@@ -99,52 +114,50 @@ div {
 
 /* Counters and progress */
 
-#progress-bar-container {
-    height: 8px;
-    width: 100%;
-    position: relative;
-    margin-top: 25px;
-    background-color: #f2f2f2;
+#time {
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
-#progress-bar {
+#timeprogress-container {
+    background-color: #f2f2f2;
+    float: left;
+    margin-top: 15px;
+    width: 120px;
+}
+
+#timeprogress {
     height: 8px;
     background-color: gray;
-    width: 0%;
+    width: 0;
     -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
-    position: absolute;
-    right:50%;
 }
        
-#progress-zero-point {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 50%;
-    margin-left: -10px;
-    background-color: #f2f2f2;
-    border-radius: 100%;
-    color: #fff;
-    border: 1px solid #fff;
+#scores {
     text-align: center;
-    vertical-align: middle;
-    font-size: 14px;
-    line-height: 50px;
-    margin-top: -6px;
+    width: 120px;
+    padding: 10px;
+    float: right;
+    background-color: #f2f2f2;
 }
 
 #score {
-    text-align: center;
-    margin-top: 25px;
-    color: #BFC7C4;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#highscore {
+    font-size: 12px;
+    color: #999;
 }
 
 /* Game end */
 
-#notification {
+.notification {
     background-color: rgba(255,255,255,0.8);
     position: absolute;
     top: 0;
@@ -152,28 +165,31 @@ div {
     width: 100%;
     text-align: center;
     display: none;
-    padding: 70px;
-    font-size: 18px;
+    padding: 35px;
 }
 
-#notification h2 {
-    font-size: 60px;
-    color: #B0D1B2;
-    margin: 0;
-}
-
-#notification h2.awww {
+.notification h2 {
+    font-size: 35px;
     color: #FB7968;
+    margin: 25px 0;
 }
-
-#notification .goat-end {
-    margin-top:-10px;
-    width: 250px;
-}
-
 
 #howtoplay {
-    margin: 75px 0;
+    display: block;
+    text-align: left;
+    padding: 10px 25px;
 }
 
+#gameover {
+    display:none;
+}
+
+#reset {
+    opacity: 0;
+    visibility:hidden;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
 

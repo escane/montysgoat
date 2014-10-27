@@ -14,22 +14,29 @@
     <div class="container">
         <div class="header">
             <h1>Monty's goat</h1>
-            <p>...is behind one of these squares. Can you guess where?</p>
+            <div id="scores">
+                <div id="highscore"></div>
+                <div id="score"></div>
+            </div>
         </div>
-        <div id="monty">
-            <div id="notification"></div>
-        </div>
-        <div id="progress-bar-container">
-            <div id="progress-bar"></div>
-            <div id="progress-zero-point"></div>
-        </div>
-        <div id="score"></div>
-        <div id="howtoplay">
-            <h3>How to play</h3>
-            <p>Picking a square opens random one without the goat. Then you can change your choice if you like. Last pick reveals if you got it right. 
-            </p><p>Hint: Rock means that the goat is <u>not</u> in the siding squares. 
-            </p><p>You get points based on how many times you picked right and only if the last one is correct.
-            </p>
+        <div id="area">
+            <div class="notification" id="howtoplay">
+                <h3>How to play</h3>
+                <p>
+                    There's a goat behind one random square each round you have to find. Picking a square opens random one <b>without</b> the goat. Then you can change your choice. Last pick reveals if you got it right.
+                </p><p>
+                    If you guessed correctly, <b>you get as many points as you clicked on the right square</b> (up to 19), so the sooner you figure it out, the more points you get. But if you guess it wrong, you lose 5 points.
+                </p><p>
+                    Then you can start again, until the time runs out. You have 1 minute.
+                </p><p>
+                    Hint: Rock means that the goat is <b>not</b> in the side squares (sides = up, down, left or right).
+                </p>
+                <button id="play">Okay, got it</button>
+            </div>
+            <div class="notification" id="gameover"></div>
+            <div id="monty"></div>
+            <div id="time"></div>
+            <div id="timeprogress-container"><div id="timeprogress"></div></div>
         </div>
     </div>
 </body>
