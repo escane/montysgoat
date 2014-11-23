@@ -13,6 +13,10 @@ div {
     box-sizing: border-box; 
 }
 
+a, a:visited {
+    color: #89B2A2;
+}
+
 button, input {
       margin: 0;
       padding: 10px 20px;
@@ -112,23 +116,23 @@ button:hover {
     background-color: #B0D1B2 !important;
 }
 
-.rock {
-    background: url('../img/rock.png') no-repeat center center #5C6361;
+.wolf {
+    background: url('../img/wolf.png') no-repeat center center #5C6361;
 }
 
-.goat, .goat-happy, .goat-sad, .rock {
-    -o-background-size: 100% auto, auto;
-    -moz-background-size: 100% auto, auto;
-    -webkit-background-size: 100% auto, auto;
-    background-size: 100% auto, auto;
+.goat, .goat-happy, .goat-sad, .wolf {
+    -o-background-size: 110% auto, auto;
+    -moz-background-size: 110% auto, auto;
+    -webkit-background-size: 110% auto, auto;
+    background-size: 110% auto, auto;
 }
 
-.col-3.goat, .col-3.goat-happy, .col-3.goat-sad, .col-3.rock,
-.col-4.goat, .col-4.goat-happy, .col-4.goat-sad, .col-4.rock {
-    -o-background-size: 65% auto, auto;
-    -moz-background-size: 65% auto, auto;
-    -webkit-background-size: 65% auto, auto;
-    background-size: 65% auto, auto;
+.col-3.goat, .col-3.goat-happy, .col-3.goat-sad, .col-3.wolf,
+.col-4.goat, .col-4.goat-happy, .col-4.goat-sad, .col-4.wolf {
+    -o-background-size: 70% auto, auto;
+    -moz-background-size: 70% auto, auto;
+    -webkit-background-size: 70% auto, auto;
+    background-size: 70% auto, auto;
 }
 
 .selected {
@@ -165,7 +169,7 @@ button:hover {
     transition: all 1s ease-in-out;
 }
 
-#hidden-rocks {
+#hidden-wolves {
     float: right;
     margin-top: 6px;
     color: #999;

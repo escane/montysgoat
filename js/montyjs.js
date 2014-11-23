@@ -1,10 +1,11 @@
 var Monty = function () {
+
     var doors = 20;
     var columns = 0;
     var prizeDoor = 0;
     var nearbyDoors = [];
-    var nrOfRocks = 7;
-    var rocks = [];
+    var nrOfWolves = 7;
+    var wolves = [];
     var pickedDoor = 0;
     var openedDoors = [];
     var picksPossible = doors - 2;
@@ -51,10 +52,10 @@ var Monty = function () {
             openedDoors.push(coinToss);
             $('#door-' + coinToss).addClass('opened');
 
-            // If it's a rock
-            var isRock = $.inArray(coinToss, rocks) != -1;
-            if (isRock) {
-                $('#door-' + coinToss).addClass('rock');
+            // If it's a wolf
+            var iswolf = $.inArray(coinToss, wolves) != -1;
+            if (iswolf) {
+                $('#door-' + coinToss).addClass('wolf');
             };
 
             // Update counters
@@ -91,10 +92,10 @@ var Monty = function () {
                 $("#door-" + prizeDoor).addClass('goat-sad');
                 $("#door-" + pickedDoor).css('background-color', '#FB7968');
 
-                // If it's a rock
-                var isRock = $.inArray(pickedDoor, rocks) != -1;
-                if (isRock) {
-                    $('#door-' + pickedDoor).addClass('rock');
+                // If it's a wolf
+                var iswolf = $.inArray(pickedDoor, wolves) != -1;
+                if (iswolf) {
+                    $('#door-' + pickedDoor).addClass('wolf');
                 };
             }
 
@@ -180,32 +181,32 @@ var Monty = function () {
     function Start() {
         switch (level) {
             case 1:
-                nrOfRocks = 0;
+                nrOfWolves = 0;
                 doors = 3;
                 columns = 3;
                 break;
             case 2:
-                nrOfRocks = 1;
+                nrOfWolves = 1;
                 doors = 4;
                 columns = 4;
                 break;
             case 3:
-                nrOfRocks = 2;
+                nrOfWolves = 2;
                 doors = 5;
                 columns = 5;
                 break;
             case 4:
-                nrOfRocks = 4;
+                nrOfWolves = 4;
                 doors = 10;
                 columns = 5;
                 break;
             case 5:
-                nrOfRocks = 6;
+                nrOfWolves = 6;
                 doors = 15;
                 columns = 5;
                 break;
             case 6:
-                nrOfRocks = 8;
+                nrOfWolves = 8;
                 doors = 20;
                 columns = 5;
                 break;
@@ -218,12 +219,12 @@ var Monty = function () {
         correctPicks = 0;
         openedDoors = [];
         nearbyDoors = [];
-        rocks = [];
+        wolves = [];
 
         // Assign the goat to a random door
         prizeDoor = Math.floor((Math.random() * doors) + 1);
 
-        // Push doors that can't have rocks into array
+        // Push doors that can't have wolves into array
         if (prizeDoor != 1 && prizeDoor != 6 && prizeDoor != 11 && prizeDoor != 16) {
             nearbyDoors.push(prizeDoor - 1);
         }
@@ -240,22 +241,24 @@ var Monty = function () {
             nearbyDoors.push(prizeDoor + 5);
         };
 
-        // Set rocks
-        for (i = 0; i < nrOfRocks; i++) {
+        // Set wolves
+        for (i = 0; i < nrOfWolves; i++) {
             var coinToss2 = Math.floor((Math.random() * doors) + 1);
-            var isRock = $.inArray(coinToss2, rocks) != -1;
+            var iswolf = $.inArray(coinToss2, wolves) != -1;
             var isNearbyDoor = $.inArray(coinToss2, nearbyDoors) != -1;
-            while (coinToss2 == prizeDoor || isNearbyDoor || isRock) {
+            while (coinToss2 == prizeDoor || isNearbyDoor || iswolf) {
                 coinToss2 = Math.floor((Math.random() * doors) + 1);
-                isRock = $.inArray(coinToss2, rocks) != -1;
+                iswolf = $.inArray(coinToss2, wolves) != -1;
                 isNearbyDoor = $.inArray(coinToss2, nearbyDoors) != -1;
             };
-            rocks.push(coinToss2);
+            wolves.push(coinToss2);
         };
 
-        if (nrOfRocks > 0) {
-            $('#hidden-rocks').html(nrOfRocks + ' rock(s)');
-        } else { $('#hidden-rocks').html(''); }
+        if (nrOfWolves == 1) {
+            $('#hidden-wolves').html(nrOfWolves + ' wolf');
+        } else if (nrOfWolves > 1) {
+            $('#hidden-wolves').html(nrOfWolves + ' wolves');
+        } else { $('#hidden-wolves').html(''); }
 
         // Reset last rounds styles 
         $("style").html('');
