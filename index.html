@@ -19,24 +19,27 @@
                 <div id="score"></div>
             </div>
         </div>
-        <div id="area">
-            <div class="notification" id="howtoplay">
-                <h3>How to play</h3>
-                <p>
-                    There's a goat behind one random square each round you have to find. Picking a square opens random one <b>without</b> the goat. Then you can change your choice. Last pick reveals if you got it right.
-                </p><p>
-                    If you guessed correctly, <b>you get as many points as you clicked on the right square</b> (up to 19), so the sooner you figure it out, the more points you get. But if you guess it wrong, you lose 5 points.
-                </p><p>
-                    Then you can start again, until the time runs out. You have 1 minute.
-                </p><p>
-                    Hint: Rock means that the goat is <b>not</b> in the side squares (sides = up, down, left or right).
-                </p>
-                <button id="play">Okay, got it</button>
-            </div>
-            <div class="notification" id="gameover"></div>
-            <div id="monty"></div>
-            <div id="time"></div>
-            <div id="timeprogress-container"><div id="timeprogress"></div></div>
+        <div id="monty"></div>
+        <div id="time">01:00</div>
+        <div id="timeprogress-container">
+            <div id="timeprogress"></div>
+        </div>
+        <div id="hidden-rocks"></div>
+        <div class="notification" id="gameover"></div>
+        <div class="notification" id="howtoplay">
+            <h3>Can you guess where Monty is? </h3>
+            <p>
+                A hide-and-seek loving goat named Monty Junior is behind one of these squares and you have to find him. 
+            </p><p>
+                Choosing a square opens one(s) <b>without</b> Monty first. Then you can either stick with your choice or switch to another square.
+            </p><p>
+                If your final guess is right, <b>you earn extra seconds</b> based on how many times total you have clicked on the correct square and proceed to the next level. If you guess wrong, you just repeat the level.
+            </p> <p>
+                You start out with <b>1 minute</b> to play with Monty. Timer starts once you've made the first click.    
+            </p><p>
+                Hint: Rock means that Monty is <b>not</b> in the side squares (sides = up, down, left or right).
+            </p>
+            <button id="close">X</button>
         </div>
     </div>
 </body>

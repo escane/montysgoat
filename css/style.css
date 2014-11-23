@@ -3,6 +3,8 @@
     margin: 0;
     font-family: arial;
     color: #6B7370;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 div {
@@ -12,13 +14,17 @@ div {
 }
 
 button, input {
-  margin: 0;
-  padding: 10px 20px;
-  border: none;
-  font: inherit;
-  line-height: 20px;
-  background-color: #F9C593;
-  color: #fff;
+      margin: 0;
+      padding: 10px 20px;
+      border: none;
+      font: inherit;
+      line-height: 20px;
+      background-color: #89B2A2;
+      color: #fff;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .container {
@@ -32,8 +38,15 @@ button, input {
     float: left;
 }
 
-#area {
-    position: relative;
+.col-4 {
+    width: 25%;
+    float: left;
+}
+
+.col-3 {
+    width: 33.3%;
+    float: left;
+
 }
 
 #monty:after,
@@ -44,14 +57,20 @@ button, input {
 }
 
 .header {
-    margin: 15px 0;
+    margin: 35px 0 15px;
 }
 
 .header h1 {
     float: left;
     margin: 0;
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 30px;
+}
+
+@media only screen and (max-width : 360px) {
+    .header h1 {
+    font-size: 25px;
+    }
 }
 
 /* Game area */
@@ -66,14 +85,15 @@ button, input {
     -o-transition: background 0.2s ease-in-out;
     transition: background-color 0.1s ease-in-out;
     cursor: pointer;
+    position:relative;
 }
 
 .door:after {
+    position: absolute;
+    top: 5px;
+    right: 5px;
     color: #fff;
     display: block;
-    padding: 4px;
-    float: right;
-    margin-top: -50%;
     font-weight: bold;
 }
 
@@ -103,6 +123,14 @@ button, input {
     background-size: 100% auto, auto;
 }
 
+.col-3.goat, .col-3.goat-happy, .col-3.goat-sad, .col-3.rock,
+.col-4.goat, .col-4.goat-happy, .col-4.goat-sad, .col-4.rock {
+    -o-background-size: 65% auto, auto;
+    -moz-background-size: 65% auto, auto;
+    -webkit-background-size: 65% auto, auto;
+    background-size: 65% auto, auto;
+}
+
 .selected {
     background-color: #FAFAD4;
 }
@@ -117,11 +145,11 @@ button, input {
 #time {
     float: left;
     margin-right: 10px;
-    margin-top: 10px;
+    margin-top: 7px;
+    color: #eee;
 }
 
 #timeprogress-container {
-    background-color: #f2f2f2;
     float: left;
     margin-top: 15px;
     width: 120px;
@@ -129,29 +157,36 @@ button, input {
 
 #timeprogress {
     height: 8px;
-    background-color: gray;
-    width: 0;
+    background-color: #f2f2f2;
+    width: 120px;
     -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
 }
+
+#hidden-rocks {
+    float: right;
+    margin-top: 6px;
+    color: #999;
+    font-size: 14px;
+}
        
 #scores {
     text-align: center;
-    width: 120px;
-    padding: 10px;
+    padding: 10px 15px;
     float: right;
-    background-color: #f2f2f2;
+    border: 2px solid #eee;
 }
 
 #score {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
+    margin-top: -4px;
 }
 
 #highscore {
-    font-size: 12px;
+    font-size: 14px;
     color: #999;
 }
 
@@ -159,37 +194,50 @@ button, input {
 
 .notification {
     background-color: rgba(255,255,255,0.8);
-    position: absolute;
+    position: fixed;
     top: 0;
+    left:0;
     height: 100%;
     width: 100%;
     text-align: center;
     display: none;
     padding: 35px;
+   
+
 }
 
 .notification h2 {
-    font-size: 35px;
-    color: #FB7968;
-    margin: 25px 0;
+    font-size: 2em;
+    color: #B0D1B2;
+    margin: 30px 0 70px 0;
+    -webkit-transition: font-size 1s ease-in-out;
+    -moz-transition: font-size 1s ease-in-out;
+    -o-transition: font-size 1s ease-in-out;
+    transition: font-size 1s ease-in-out;
 }
-
 #howtoplay {
     display: block;
     text-align: left;
-    padding: 10px 25px;
+    padding: 20px;
+    margin: 75px 0 50px 0;
+    position: static;
+    border: 2px solid #eee;
+    position: relative; 
+}
+
+#close {
+    position: absolute; 
+    top: -15px; 
+    right: 20px; 
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: #FB7968;
 }
 
 #gameover {
     display:none;
-}
-
-#reset {
-    opacity: 0;
-    visibility:hidden;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+    font-weight:bold;
+    z-index: 9999;
+    padding-top: 120px;
 }
 
