@@ -161,6 +161,12 @@ var Monty = function () {
                 clearInterval(intervalVar);
                 return;
             }
+            if (seconds <= 5) {
+                soundHandle = document.getElementById('tic-tac');
+                soundHandle.src = 'sounds/tick.mp3';
+                soundHandle.play()
+                soundHandle.volume = .8;
+            }
 
             if (seconds <= 15) {
                 $('#timeprogress').css('background-color', '#FB7968');
@@ -206,7 +212,7 @@ var Monty = function () {
                 columns = 5;
                 break;
             case 6:
-                nrOfWolves = 8;
+                nrOfWolves = 7;
                 doors = 20;
                 columns = 5;
                 break;
